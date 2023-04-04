@@ -46,7 +46,7 @@ fortune | fish_say
 ```
 **Get text from the command line**
 ```code
-fish_say 'Hi, I'm a talking fish
+fish_say "Hi, I'm a talking fish"
 ```
 **Multiline**
 ```code
