@@ -17,44 +17,60 @@ fisher install drbarrett/fish_say
 
 ## Usage
 [`fish_say -h`](assets/fish_say_help.png) to get help
-    ```code
-    fish_say - a fish logo / cowsay mashup
-    usage:
-       fish_say [-h] [-omitbMe] [message test]
-       command | fish_say [-omitbMe]
-       fish_say --save [-omitb]
-       fish_say --delete
-    options:
-       -o, --outer=     outer fish color
-       -m, --middle=    middle fish color
-       -i, --inner=     inner fish color
-       -t, --text=      text color
-       -b  --bubble=    bubble color
-       -M, --mouth=     mouth character
-       -e, --eye=       eye character
-           --save       save colorscheme
-           --delete     delete saved colorscheme
-    ```
+
+```code
+fish_say - a fish logo / cowsay mashup
+usage:
+   fish_say [-h] [-omitbMe] [message test]
+   command | fish_say [-omitbMe]
+   fish_say --save [-omitb]
+   fish_say --delete
+options:
+   -o, --outer=     outer fish color
+   -m, --middle=    middle fish color
+   -i, --inner=     inner fish color
+   -t, --text=      text color
+   -b  --bubble=    bubble color
+   -M, --mouth=     mouth character
+   -e, --eye=       eye character
+       --save       save colorscheme
+       --delete     delete saved colorscheme
+```
 Tab completion is enabled and is helpful for selecting colors. See [set_color](https://fishshell.com/docs/current/cmds/set_color.html) --help for additional info on available colors.
 
 
 ## Examples
 **Pipe text to fish_say**
-`fortune | fish_say`
+```code
+fortune | fish_say
+```
 **Get text from the command line**
-`fish_say 'Hi, I'm a talking fish`
+```code
+fish_say 'Hi, I'm a talking fish
+```
 **Multiline**
-`fish_say 'line 1' 'line 2' 'line 3'`
+```code
+fish_say 'line 1' 'line 2' 'line 3'
+```
 **Change Appearance**
-`fish_say -o white -m brblack -i white --mouth=O --eye=X "I'm dead jim"`
+
+```code
+fish_say -o white -m brblack -i white --mouth=O --eye=X "I'm dead jim"
+```
 **Save Configuration**
-`fish_say -o blue -m cyan -i green -b yellow -t white --save`
+```code
+fish_say -o blue -m cyan -i green -b yellow -t white --save
+```
+
 **Delete Configuration**
-`fish_say --delete`
+```code
+fish_say --delete
+```
+
 **Add to fish_greeting**
 You can enjoy this foolishness every time the shell loads by adding this to your fish greeting (`~/.config/fish/functions/fish_greeting.fish`):
 
-```console
+```code
     function fish_greeting
         fortune | fish_say
     end
