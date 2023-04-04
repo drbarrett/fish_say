@@ -1,6 +1,7 @@
-# fish_say - A fish_logo / cowsay mashup
+# 🐟 fish_say - A fish_logo / cowsay mashup
 
-[![](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](https://mit-license.org)
+[![Fish Shell Version](https://img.shields.io/badge/fish-v3.3.1-blue)](http://fishshell.com)
 
 This plugin adds a function to make the [fish-shell](http://fish.sh) ASCII-art logo speak! It's completely ridiculous and unnecessary, but was a fun project for learning to write code for fish. I've used bash and zsh for a few decades, but have only been using fish for a few weeks, so I'm sure there's much in this code that should be improved.
 
@@ -15,7 +16,7 @@ This plugin adds a function to make the [fish-shell](http://fish.sh) ASCII-art l
 fisher install drbarrett/fish_say
 ```
 
-## Usage
+## 🧰 Usage
 [`fish_say -h`](assets/fish_say_help.png) to get help
 
 ```code
@@ -39,44 +40,47 @@ options:
 Tab completion is enabled and is helpful for selecting colors. See [set_color](https://fishshell.com/docs/current/cmds/set_color.html) --help for additional info on available colors.
 
 
-## Examples
+## 🔎 Examples
 **Pipe text to fish_say**
-```code
+```fish
 fortune | fish_say
 ```
 **Get text from the command line**
-```code
+```fish
 fish_say "Hi, I'm a talking fish"
 ```
 **Multiline**
-```code
+```fish
 fish_say 'line 1' 'line 2' 'line 3'
 ```
 **Change Appearance**
 
-```code
+```fish
 fish_say -o white -m brblack -i white --mouth=O --eye=X "I'm dead jim"
 ```
 **Save Configuration**
-```code
+```fish
 fish_say -o blue -m cyan -i green -b yellow -t white --save
 ```
 
 **Delete Configuration**
-```code
+```fish
 fish_say --delete
 ```
 
 **Add to fish_greeting**
 You can enjoy this foolishness every time the shell loads by adding this to your fish greeting (`~/.config/fish/functions/fish_greeting.fish`):
 
-```code
+```fish
     function fish_greeting
         fortune | fish_say
     end
 ```
 
-## Credits & Inspiration
-- [fish_logo](https://github.com/laughedelic/fish_logo): original inspiration and I stole the fish graphic from here as well.
-- [cowsay](https://github.com/tnalpgge/rank-amateur-cowsay): The fortune command isn't nearly as much fun when it isn't piped through cowsay and lolcat.
-- [lolcat](https://github.com/busyloop/lolcat)
+## 🙏 Credits & Inspiration
+- 🐠 [fish_logo](https://github.com/laughedelic/fish_logo): original inspiration and I stole the fish graphic from here as well.
+- 🐮 [cowsay](https://github.com/tnalpgge/rank-amateur-cowsay): The fortune command isn't nearly as much fun when it isn't piped through cowsay and lolcat.
+- 🌈 [lolcat](https://github.com/busyloop/lolcat): Rainbow goodness
+
+## 📃 License
+[MIT](https://mit-license.org)
