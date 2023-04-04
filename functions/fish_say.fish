@@ -78,7 +78,7 @@ function fish_say --description="A talking fish!"
    echo "$b└─$edge─┘"
 
     # and now the fish
-   echo $b"   \\
+   echo $b"  \\
    "$b"\\"$o"    ___======____="$m"-"$i"-"$m"-="$o")
     "$b"\\"$o" /T            \_"$i"--="$m"=="$o")
       "$mouth" \ "$m"("$i$eye$m")   "$o"\~    \_"$i"-="$m"="$o")
