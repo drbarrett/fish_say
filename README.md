@@ -5,7 +5,7 @@
 
 This plugin adds a function to make the [fish-shell](http://fish.sh) ASCII-art logo speak! It's completely ridiculous and unnecessary, but was a fun project for learning to write code for fish. I've used bash and zsh for a few decades, but have only been using fish for a few weeks, so I'm sure there's much in this code that should be improved.
 
-![fish_say screenshot](assets/fish_say_help.png)
+![fish_say screenshot](assets/fish_say.png)
 
 ##  💾 Installation
 #### System Requirements
