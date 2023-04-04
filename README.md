@@ -17,7 +17,7 @@ fisher install drbarrett/fish_say
 
 ## Usage
 [`fish_say -h`](assets/fish_say_help.png) to get help
-    ```console
+    ```code
     fish_say - a fish logo / cowsay mashup
     usage:
        fish_say [-h] [-omitbMe] [message test]
@@ -39,19 +39,19 @@ Tab completion is enabled and is helpful for selecting colors. See [set_color](h
 
 
 ## Examples
-##### Pipe text to fish_say
+**Pipe text to fish_say**
 `fortune | fish_say`
-#####get text from the command line
+**Get text from the command line**
 `fish_say 'Hi, I'm a talking fish`
-#### Multiline
+**Multiline**
 `fish_say 'line 1' 'line 2' 'line 3'`
-#### Change Appearance
+**Change Appearance**
 `fish_say -o white -m brblack -i white --mouth=O --eye=X "I'm dead jim"`
-#### Save Configuration
+**Save Configuration**
 `fish_say -o blue -m cyan -i green -b yellow -t white --save`
-#### Delete Configuration
+**Delete Configuration**
 `fish_say --delete`
-#### Add to fish_greeting
+**Add to fish_greeting**
 You can enjoy this foolishness every time the shell loads by adding this to your fish greeting (`~/.config/fish/functions/fish_greeting.fish`):
 
 ```console
