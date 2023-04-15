@@ -23,11 +23,11 @@ function fish_say --description="A talking fish!"
     end
 
     # get colors in order, cmd line, global, or default
-    set outer  (__fs_choose_opt "$_flag_outer"  "$_fish_say_outer_color"  "red")
-    set middle (__fs_choose_opt "$_flag_middle" "$_fish_say_middle_color" "f70")
-    set inner  (__fs_choose_opt "$_flag_inner"  "$_fish_say_inner_color"  "yellow")
-    set text   (__fs_choose_opt "$_flag_text"   "$_fish_say_text_color"   "white")
-    set bubble (__fs_choose_opt "$_flag_bubble" "$_fish_say_bubble_color" "green")
+    set outer  (__fs_select "$_flag_outer"  "$_fish_say_outer_color"  "red")
+    set middle (__fs_select "$_flag_middle" "$_fish_say_middle_color" "f70")
+    set inner  (__fs_select "$_flag_inner"  "$_fish_say_inner_color"  "yellow")
+    set text   (__fs_select "$_flag_text"   "$_fish_say_text_color"   "white")
+    set bubble (__fs_select "$_flag_bubble" "$_fish_say_bubble_color" "green")
 
     if set -q _flag_save
         echo saving global colors
@@ -53,8 +53,8 @@ function fish_say --description="A talking fish!"
     set i (set_color $inner)
     set t (set_color $text)
     set b (set_color $bubble)
-    set eye (__fs_choose_opt "$_flag_eye" "O" )
-    set mouth (__fs_choose_opt "$_flag_mouth" "[" )
+    set eye (__fs_select "$_flag_eye" "O" )
+    set mouth (__fs_select "$_flag_mouth" "[" )
 
     # get the message text
     set msg
@@ -84,7 +84,7 @@ function fish_say --description="A talking fish!"
 
     # and now the fish
     echo $b"  o
-    "$b"o"$o"    ___======____="$m"-"$i"-"$m"-="$o")
+   "$b"o"$o"    ___======____="$m"-"$i"-"$m"-="$o")
     "$b"o"$o" /T            \_"$i"--="$m"=="$o")
       "$mouth" \ "$m"("$i$eye$m")   "$o"\~    \_"$i"-="$m"="$o")
        \      / )J"$m"~~    "$o"\\"$i"-="$o")
@@ -138,14 +138,12 @@ function __fs_max_length
     echo $max
 end
 
-function __fs_choose_opt -a flag global default
-    # pick one of the 3 options in order of presentation
-    if test -n $flag
-        set color $flag
-    else if test -n $global
-        set color $global
-    else
-        set color $default
+function __fs_select
+    for value in $argv
+        if test -n $value
+            echo $value
+            return 0
+        end
     end
-    echo $color
+    return -1
 end
