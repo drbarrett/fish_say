@@ -1,4 +1,5 @@
 function fish_say --description="A talking fish!"
+
     set -l _version v0.1
 
     set -l options (fish_opt --short=h --long=help)
@@ -73,14 +74,18 @@ function fish_say --description="A talking fish!"
     # find the longest line length
     set max (__fs_max_length $msg)
 
+# possible alternate line shapes
+# ─ ~ ╽ │ ︶ ︵ ┈ ┄ ┆
+
+
     # draw the box
-    set edge (string pad -c "─" -w $max "─")
-    echo "$b┌─$edge─┐"
+    set edge (string pad -c "︵" -w $max "~")
+    echo "$b︵︵$edge─╮"
     for line in $msg
         set line (string pad -r -w $max $line)
-        echo "$b│ $t$line $b│"
+        echo "$b( $t$line $b╽"
     end
-    echo "$b└─$edge─┘"
+    echo "$b╰─$edge─╯"
 
     # and now the fish
     echo $b"  o
