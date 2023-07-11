@@ -79,11 +79,11 @@ function fish_say --description="A talking fish!"
 
 
     # draw the box
-    set edge (string pad -c "︵" -w $max "~")
-    echo "$b︵︵$edge─╮"
+    set edge (string pad -c "─" -w $max "─")
+    echo "$b╭─$edge─╮"
     for line in $msg
         set line (string pad -r -w $max $line)
-        echo "$b( $t$line $b╽"
+        echo "$b│ $t$line $b│"
     end
     echo "$b╰─$edge─╯"
 
